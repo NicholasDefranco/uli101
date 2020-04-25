@@ -1,0 +1,31 @@
+#!/bin/bash
+
+p1=$1
+op="$2"
+p2=$3
+
+if [ "$(echo $* | grep -E '^([0-9]+)\s+([-+*/])\s+([0-9]+)$')" == "" ]
+then
+	echo "invalid arguments"
+	exit
+fi
+
+
+echo p1 is $p1
+echo op is "$op"
+echo p2 is $p2
+
+case "$op" in
+
+	'+') result=$((p1 + p2))
+		;;
+	'-') result=$((p1 - p2))
+		;;
+	'/') result=$((p1 / p2))
+		;;
+	'*') result=$((p1 * p2))
+		;;
+
+esac
+
+	echo "the answer is $result."

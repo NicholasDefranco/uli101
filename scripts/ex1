@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for ((i=0;i<10000000;i++))
+do
+
+	y=$((i*RANDOM))
+
+done
+
+echo $y > answer

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ 3!=3 ]
+then
+	echo "wow"
+fi
+
+echo $(ls | wc -l) 

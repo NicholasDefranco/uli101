@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#palindrome counter
+
+lines="$(wc -l $1 | cut -d' ' -f1)"
+count=0
+regex='[a-zA-Z][a-zA-Z]'
+
+for ((i=1;"$i"<="$lines";i++))
+do
+	word=$(head -$i $1 | tail -1)
+
+	if [[ "$word" =~ $regex ]]
+	then
+
+		rword=$(echo "$word" | rev)
+
+		if [ "$word" == "$rword" ]
+		then
+			let count="$count+1"
+		fi
+
+	fi
+done
+
+echo "$count"  
+

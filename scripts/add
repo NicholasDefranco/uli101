@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SUM=0
+for number in $@
+do
+	SUM=$((number + SUM))		
+done
+
+echo "$SUM"

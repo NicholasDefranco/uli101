@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ "$(echo "$1" | grep "/$")" == "" ]
+then
+	LOCATION="$1/"
+else
+	LOCATION=$1
+fi
+
+for i in $(ls $1)
+do
+	RESULT=$(echo "$LOCATION$i" | grep "\.old")
+	if [ "$RESULT" == "" ]
+	then
+		mv "$LOCATION$i" "$LOCATION$i.old"	
+#	else
+#		echo "$RESULT"
+	fi
+
+done
