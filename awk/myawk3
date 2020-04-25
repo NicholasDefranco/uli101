@@ -1,0 +1,21 @@
+
+BEGIN{
+
+
+}
+
+
+
+NR == 1{
+
+printf("file is: %s\n", FILENAME);	
+printf("field sep is: |%s|\n", FS);	
+
+
+}
+
+
+END{
+
+
+}
